@@ -14,11 +14,6 @@ var _pageIsFramed = (function() {
   );
 })();
 
-/**
- * Keep track of HTML5 Clipboard API implementation status
- * @private
- */
-var _html5ClipboardSupported = false;
 
 /**
  * Keep track of the state of the Flash object.

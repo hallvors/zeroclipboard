@@ -1983,32 +1983,6 @@ var _detectFlashSupport = function(ActiveXObject) {
 
 
 /**
- * Detect HTML5 clipboard API support.
- * @returns `undefined`
- * @private
- *
- */
-var _detectHTML5API = function() {
-  try{
-    /* In some browsers, in particular Firefox < 40, queryCommandSupported() will
-     * return true because the command is "supported" in scripts with extra privileges
-     * - but trying to use the API will throw. We use both functions below, but the order
-     * matters: if queryCommandEnabled() throws, we will not use queryCommandSupported().
-     * queryCommandEnabled() is expected to return false when not called from a
-     * user-triggered thread, so it's only called here to see if it throws..
-     */
-    _html5ClipboardSupported = document.queryCommandEnabled("copy") || document.queryCommandSupported("copy");
-  }catch(e){}
-};
-
-
-
-/**
- * Invoke the HTML5 detection algorithms immediately.
- */
-_detectHTML5API();
-
-/**
  * Invoke the Flash detection algorithms immediately upon inclusion so we're not waiting later.
  */
 _detectFlashSupport(_ActiveXObject);

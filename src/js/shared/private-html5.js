@@ -123,30 +123,3 @@ var _getRelatedTarget = function(targetEl) {
     return relatedTargetId ? _document.getElementById(relatedTargetId) : null;
 };
 
-
-/**
- * Detect HTML5 clipboard API support.
- * @returns `undefined`
- * @private
- *
- */
-var _detectHTML5API = function() {
-  try{
-    /* In some browsers, in particular Firefox < 40, queryCommandSupported() will
-     * return true because the command is "supported" in scripts with extra privileges
-     * - but trying to use the API will throw. We use both functions below, but the order
-     * matters: if queryCommandEnabled() throws, we will not use queryCommandSupported().
-     * queryCommandEnabled() is expected to return false when not called from a
-     * user-triggered thread, so it's only called here to see if it throws..
-     */
-     /*
-     * This will fail with the early Chrome implementation because it runs
-     * before the user interacts with document -
-     * https://code.google.com/p/chromium/issues/detail?id=476508
-     * It will fall back to use Flash.
-     */
-    return document.queryCommandEnabled("copy") || document.queryCommandSupported("copy");
-  }catch(e){}
-  return false;
-};
-
