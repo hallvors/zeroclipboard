@@ -100,13 +100,11 @@ module.exports = function(grunt) {
           Saves references to host stuff
           * Check if all vars and references are necessary
           */
+          "src/js/core/apidetection.js", /* Clipboard API feature detection and Flash fallback */
           "src/js/core/private-html5.js",/* The "real" implementation - a click
           listener, on/off/emit/handlers infrastructure
           How much of this infrastructure do we need?
           */
-          "src/js/core/api.js",/* This defines some properties on global
-           ZeroClipboard
-           */
           "src/js/client/private-html5.js", /* unsure if this is required.. */
           "src/js/client/api-html5.js", /* ditto.. but we need a "bridge" between
           instance methods and the stuff defined on the global ZeroClipboard object.
