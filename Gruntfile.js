@@ -70,7 +70,7 @@ module.exports = function(grunt) {
           "src/js/core/api.js",
           "src/js/end.js"
         ],
-        dest: "dist/ZeroClipboard.Core.js"
+        dest: "dist/ZeroClipboardFlash.Core.js"
       },
       client: {
         src: [
@@ -85,6 +85,34 @@ module.exports = function(grunt) {
           "src/js/client/private.js",
           "src/js/client/api.js",
           "src/js/end.js"
+        ],
+        dest: "dist/ZeroClipboardFlash.js"
+      },
+      clientHTML5: {
+        src: [
+          "src/meta/source-banner.tmpl", /* version etc */
+          "src/js/start.js", /* Starts anonymous function for closure */
+          "src/js/shared/private-html5.js", /* Utility stuff like _args
+                  Consider all variables and methods here - used?
+                  _isWindows - srsly?
+           */
+          "src/js/core/state-html5.js",/* Defines some variables like _globalConfig
+          Saves references to host stuff
+          * Check if all vars and references are necessary
+          */
+          "src/js/core/private-html5.js",/* The "real" implementation - a click
+          listener, on/off/emit/handlers infrastructure
+          How much of this infrastructure do we need?
+          */
+          "src/js/core/api.js",/* This defines some properties on global
+           ZeroClipboard
+           */
+          "src/js/client/private-html5.js", /* unsure if this is required.. */
+          "src/js/client/api-html5.js", /* ditto.. but we need a "bridge" between
+          instance methods and the stuff defined on the global ZeroClipboard object.
+          Although perhaps core/api can do that directly?
+          */
+          "src/js/end.js" /* Ends the closure */
         ],
         dest: "dist/ZeroClipboard.js"
       },
