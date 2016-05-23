@@ -276,7 +276,7 @@ module.exports = function(grunt) {
         "test/core/api.tests.js.html",
         "test/client/private.tests.js.html",
         "test/client/api.tests.js.html",
-        "test/built/ZeroClipboard.Core.tests.js.html",
+        "test/built/ZeroClipboardFlash.Core.tests.js.html",
         "test/built/ZeroClipboard.tests.js.html"
         //"test/**/*.tests.js.html"
       ],
@@ -289,7 +289,7 @@ module.exports = function(grunt) {
               "test/core/api.tests.js.html",
               "test/client/private.tests.js.html",
               "test/client/api.tests.js.html",
-              "test/built/ZeroClipboard.Core.tests.js.html",
+              "test/built/ZeroClipboardFlash.Core.tests.js.html",
               "test/built/ZeroClipboard.tests.js.html"
               //"test/**/*.tests.js.html"
             ]).map(function(testPage) {
@@ -323,7 +323,7 @@ module.exports = function(grunt) {
               "test/core/api.tests.js.html",
               "test/client/private.tests.js.html",
               "test/client/api.tests.js.html",
-              "test/built/ZeroClipboard.Core.tests.js.html",
+              "test/built/ZeroClipboardFlash.Core.tests.js.html",
               "test/built/ZeroClipboard.tests.js.html"
               //"test/**/*.tests.js.html"
             ]).map(function(testPage) {
