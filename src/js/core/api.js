@@ -18,6 +18,11 @@ var ZeroClipboard = function() {
     ZeroClipboard._createClient.apply(this, _args(arguments));
   }
 
+  // Implementation - either Flash or browser's clipboard API
+  // Used to skip tests that are not relevant for given
+  // implementation.
+  this.implementation = "flash";
+
 };
 
 

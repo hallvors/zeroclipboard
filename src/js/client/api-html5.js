@@ -50,3 +50,5 @@ ZeroClipboard.emit = function(event) {
         }
     }
 };
+
+ZeroClipboard.implementation = "native";
