@@ -157,25 +157,27 @@
   });
 
 
-  test("`setRichText` works", function(assert) {
-    assert.expect(4);
+  if(ZeroClipboard.implementation === "flash") {
+    test("`setRichText` works", function(assert) {
+      assert.expect(4);
 
-    // Arrange
-    var client = new ZeroClipboard();
+      // Arrange
+      var client = new ZeroClipboard();
 
-    // Assert, Act, repeat ad nauseam
-    assert.deepEqual(_clipData, {}, "`_clipData` is empty");
+      // Assert, Act, repeat ad nauseam
+      assert.deepEqual(_clipData, {}, "`_clipData` is empty");
 
-    client.setRichText("zc4evar");
-    assert.deepEqual(_clipData, { "application/rtf": "zc4evar" }, "`_clipData` contains expected RTF");
+      client.setRichText("zc4evar");
+      assert.deepEqual(_clipData, { "application/rtf": "zc4evar" }, "`_clipData` contains expected RTF");
 
-    client.setRichText("{\\rtf1\\ansi\n{\\b ZeroClipboard}}");
-    assert.deepEqual(_clipData, { "application/rtf": "{\\rtf1\\ansi\n{\\b ZeroClipboard}}" }, "`_clipData` contains expected updated RTF");
+      client.setRichText("{\\rtf1\\ansi\n{\\b ZeroClipboard}}");
+      assert.deepEqual(_clipData, { "application/rtf": "{\\rtf1\\ansi\n{\\b ZeroClipboard}}" }, "`_clipData` contains expected updated RTF");
 
-    _clipData["text/plain"] = "blah";
-    client.setRichText("{\\rtf1\\ansi\n{\\i Foo}}");
-    assert.deepEqual(_clipData, { "application/rtf": "{\\rtf1\\ansi\n{\\i Foo}}", "text/plain": "blah" }, "`_clipData` contains expected updated RTF AND the other data");
-  });
+      _clipData["text/plain"] = "blah";
+      client.setRichText("{\\rtf1\\ansi\n{\\i Foo}}");
+      assert.deepEqual(_clipData, { "application/rtf": "{\\rtf1\\ansi\n{\\i Foo}}", "text/plain": "blah" }, "`_clipData` contains expected updated RTF AND the other data");
+    });
+  }
 
 
   test("`setData` works", function(assert) {
